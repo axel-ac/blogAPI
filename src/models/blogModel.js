@@ -38,6 +38,30 @@ const nameSchema = new mongoose.Schema({
 // BlogCategory
 // ------------------------------------------
 
+const blogCategorySchema = new mongoose.Schema({
+
+  name: {
+    type: String,
+    trim: true,
+    required
+  }
+
+}, {
+  collection: "blogCategories",
+  timestamps: true 
+})
+
+
+
+
+
+
+
+
+// ------------------------------------------
+// BlogPost
+// ------------------------------------------
+
 const blogPostSchema = new mongoose.Schema(
   {
     // _id
@@ -73,5 +97,6 @@ const blogPostSchema = new mongoose.Schema(
 // };
 
 module.exports = {
-  BlogPost: mongoose.model("BlogPost", blogPostSchema)
+  BlogCategory: mongoose.model("BlogCategory", blogCategorySchema),
+  BlogPost: mongoose.model("BlogPost", blogPostSchema),
 };
