@@ -24,7 +24,9 @@ app.all("/", (req, res) => {
     res.send("WELCOME TO BLOG API");
 })
 
-
+/* ------------------------------------------------------- */
+// Synchronization:
+// require('./src/sync')()
 
 //errorHandler:
 app.use(require("./src/errorHandler"))

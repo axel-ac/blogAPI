@@ -66,6 +66,12 @@ const blogPostSchema = new mongoose.Schema(
   {
     // _id
 
+    blogCategoryId: {
+      type: mongoose.Schema.ObjectId, // Relational ObjectId
+      ref: "BlogCategory", // ModelName
+      required: true,
+    },
+
     title: {
       type: String,
       trim: true,
@@ -85,9 +91,8 @@ const blogPostSchema = new mongoose.Schema(
 
     // createdAt
     // updatedAt
-
   },
-  {collection: "blogPosts", timestamps: true}
+  { collection: "blogPosts", timestamps: true }
 );
 
 // const BlogPostModel = mongoose.model("BlogPost", blogPostSchema)
